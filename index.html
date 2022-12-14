@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+.container{
+    border: 2px solid black;
+    padding: 50px 35px 50px 35px;
+    text-align: center;
+    background-color: aquamarine;
+}
+button{
+    padding: 3px 15px;
+    margin: 4px;
+    font-size: 50px;
+    border:none;
+    border-radius: 10px;
+    
+}
+input{
+    width: 260px;
+    height: 44px;
+    border-radius: 10px;
+    font-size: 30px;
+    text-align: right;
+    padding-right: 5px;
+}
+.eq{
+    width: 122px;
+    background-color: green;
+    color: white;
+}
+.btn{
+    width: 62px;
+    background-color: red;
+    color: white;
+}
+.cut{
+    background-color: gray;
+    color: white;
+    
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+    <input type="text" id="data" placeholder="0">
+    <br>
+    <button onclick="cal(7)">7</button>
+    <button onclick="cal(8)">8</button>
+    <button onclick="cal(9)">9</button>
+    <button onclick="cal('+')">+</button> <br>
+    <button onclick="cal(4)">4</button>
+    <button onclick="cal(5)">5</button>
+    <button onclick="cal(6)">6</button>
+    <button onclick="cal('-')">-</button> <br>
+    <button onclick="cal(1)">1</button>
+    <button onclick="cal(2)">2</button>
+    <button onclick="cal(3)">3</button>
+    <button onclick="cal('*')">*</button> <br>
+    <button onclick="cal(0)">0</button>
+    <button onclick="cal('%')">%</button>
+    <button onclick="cal('.')">.</button>
+    <button onclick="cal('/')">/</button><br>
+    <button onclick="equal()" class="eq">=</button>
+    <button onclick="clr()" class="btn">c</button>
+    <button onclick="del()" class="cut">x</button>
+</div>
+<script>
+    let result=document.getElementById("data");
+    let cal=(number)=>{
+        result.value+=number;
+    }
+    let equal=()=>{
+        try{
+            result.value=eval(result.value);
+        }
+        catch(err){
+            alert("Enter valide number");
+        }
+    }
+  function clr(){
+   result.value=" ";
+  }
+  function del(){
+    result.value=result.value.slice(0,-1);
+  }
+</script>
+</body>
+</html>
